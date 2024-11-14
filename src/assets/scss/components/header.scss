@@ -173,3 +173,11 @@
 .burger {
   @include burger;
 }
+
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: var(--neutral-color-10);
+  height: 100px;
+}
