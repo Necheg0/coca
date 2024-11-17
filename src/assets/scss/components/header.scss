@@ -1,9 +1,9 @@
 .header {
   padding: 26px 0 22px;
 
-@include mobile{
-  padding: 22px 0 18px;
-}
+  @include mobile {
+    padding: 22px 0 18px;
+  }
 
   &__container {
     @include flex-all-between;
@@ -12,15 +12,18 @@
   &__logo {
     position: relative;
     z-index: var(--z-index-4);
+
     & svg {
-      @include mobile{
+      @include mobile {
         width: 130px;
       }
+
       & path {
         &:not(:last-child) {
           fill: var(--logo-color-text);
         }
       }
+
       & circle {
         fill: var(--logo-color-circle);
       }
@@ -34,6 +37,7 @@
     @include tablet {
       gap: 60px;
     }
+
     @include small-tablet {
       position: fixed;
       top: 0;
@@ -47,9 +51,9 @@
       opacity: 0;
       visibility: hidden;
       transition:
-        left var(--transiton),
-        opacity 0.2s,
-        visibility 0.2s;
+        left var(--transition),
+        opacity var(--transition),
+        visibility var(--transition);
 
       &--visible {
         left: 0;
@@ -58,6 +62,7 @@
       }
     }
   }
+
   &__switcher {
     position: relative;
     border-radius: 13px;
@@ -65,35 +70,43 @@
     height: 27px;
     background-color: var(--neutral-color-130);
     transform: translateY(8px);
-    transition: background-color var(--transiton);
+    transition: background-color var(--transition);
+
     &::before {
+      content: '';
       position: absolute;
       top: 2px;
       left: 3px;
       display: inline-block;
-      content: '';
       border-radius: 50%;
       width: 23px;
       height: 23px;
       background-color: var(--neutral-color-120);
       transition:
-        left var(--transiton),
-        background-color var(--transiton);
+        left var(--transition),
+        background-color var(--transition);
     }
 
     &-text {
       position: absolute;
       top: -24px;
       left: 50%;
-      transform: translateX(-50%);
       font-weight: 600;
       line-height: 150%;
       text-align: center;
       color: var(--neutral-color-140);
+      transform: translateX(-50%);
+
+      @include small-tablet {
+        top: -28px;
+        font-size: 20px;
+      }
     }
+
     &-checkbox {
       appearance: none;
     }
+
     &:has(&-checkbox:checked) {
       background-color: var(--neutral-color-60);
 
@@ -104,20 +117,22 @@
     }
   }
 }
+
 .nav {
   &__list {
     @include flex-align-center;
     gap: 32px;
 
     @include small-tablet {
-      flex-direction: column;
       gap: 20px;
+      flex-direction: column;
     }
 
     @include mobile {
       gap: 10px;
     }
   }
+
   &__link {
     position: relative;
     font-weight: 500;
@@ -125,23 +140,25 @@
     color: var(--neutral-color-100);
 
     @include small-tablet {
+      font-size: 20px;
       line-height: 200%;
     }
 
     &::after {
       content: '';
       position: absolute;
-      width: 100%;
-      left: 0;
+      right: 0;
       bottom: -5px;
+      left: 0;
       height: 1px;
       background-color: var(--neutral-color-100);
       opacity: 0;
       visibility: hidden;
       transition:
-        opacity var(--transiton),
-        visibility var(--transiton);
+        opacity var(--transition),
+        visibility var(--transition);
     }
+
     &:hover {
       &::after {
         opacity: 1;
@@ -160,8 +177,8 @@
     opacity: 0;
     visibility: hidden;
     transition:
-      opacity var(--transiton),
-      visibility var(--transiton);
+      opacity var(--transition),
+      visibility var(--transition);
 
     &--visible {
       opacity: 1;
@@ -172,12 +189,4 @@
 
 .burger {
   @include burger;
-}
-
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background-color: var(--neutral-color-10);
-  height: 100px;
 }
