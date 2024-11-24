@@ -2,12 +2,12 @@
 
 // Экспортируем функцию handleScroll
 export function handleScroll() {
-  const header = document.querySelector(".header");
+  const header = document.querySelector('.header');
   const stickyOffset = header.offsetTop; // Определяем исходную позицию header
 
   if (window.pageYOffset > stickyOffset) {
-    header.classList.add("sticky");
+    header.classList.add('sticky');
   } else {
-    header.classList.remove("sticky");
+    header.classList.remove('sticky');
   }
 }

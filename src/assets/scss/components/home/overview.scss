@@ -2,13 +2,13 @@
   padding: 100px 0;
   background-color: var(--black-bg-color);
 
-  @include tablet{
+  @include tablet {
     text-align: center;
   }
 
-@include mobile{
-  padding: 60px 0;
-}
+  @include mobile {
+    padding: 60px 0;
+  }
 
   &__title {
     margin-bottom: 24px;
@@ -24,14 +24,13 @@
     line-height: 150%;
     margin-bottom: 80px;
 
-    @include tablet{
+    @include tablet {
       margin-bottom: 60px;
     }
 
-    @include small-mobile{
+    @include small-mobile {
       margin-bottom: 50px;
     }
-
   }
 
   &__list {
@@ -39,7 +38,7 @@
     flex-wrap: wrap;
     gap: 56px;
 
-    @include tablet{
+    @include tablet {
       flex-direction: column;
       align-items: center;
       gap: 40px;
@@ -52,7 +51,7 @@
     &-title {
       margin-bottom: 24px;
 
-      @include tablet{
+      @include tablet {
         margin-bottom: 18px;
       }
     }
@@ -64,8 +63,8 @@
       line-height: 42px;
       letter-spacing: -1px;
 
-      @include mobile{
-        max-width: 320px ;
+      @include mobile {
+        max-width: 320px;
       }
     }
     &-descr {
@@ -80,10 +79,10 @@
 
   &__title,
   &__descr,
-  &__item-title{
-    @include tablet{
+  &__item-title {
+    @include tablet {
       margin-right: auto;
-      margin-left: auto
+      margin-left: auto;
     }
   }
 }

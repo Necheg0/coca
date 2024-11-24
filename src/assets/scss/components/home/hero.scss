@@ -6,7 +6,7 @@
     padding: 77px 0 121px;
   }
 
-  @include mobile{
+  @include mobile {
     min-height: calc(100dvh - 128px);
   }
 
@@ -34,7 +34,7 @@
       font-size: 24px;
     }
 
-    @include small-mobile{
+    @include small-mobile {
       font-size: 20px;
     }
   }
