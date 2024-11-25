@@ -15,9 +15,6 @@ export default [
         sourceType: 'module',
       },
     },
-    rules: {
-      'prettier/prettier': 'error',
-    },
   },
   pluginJs.configs.recommended,
   {
