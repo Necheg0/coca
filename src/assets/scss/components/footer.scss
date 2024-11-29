@@ -7,6 +7,7 @@
     padding-top: 62px;
   }
 
+  // Верхняя часть футера
   &__head {
     @include flex-all-between;
     margin-bottom: 134px;
@@ -57,6 +58,7 @@
     background-color: #fff;
   }
 
+  // Основное тело футера
   &__body {
     @include flex-all-between;
     margin-bottom: 56px;
@@ -68,50 +70,30 @@
     }
 
     @include mobile {
-      flex-direction: column-reverse;
-    }
-
-    &-info {
-      @include tablet {
-        @include flex-align-center;
-        gap: 30px;
-      }
-
-      @include small-tablet {
-        gap: 10px;
-        flex-direction: column;
-        width: 100%;
-        text-align: center;
-      }
-    }
-
-    &-descr {
-      max-width: 292px;
-      font-weight: 500;
-      line-height: 162%;
-      color: var(--neutral-color-150);
-
-      @include tablet {
-        max-width: 500px;
-      }
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
   }
 
-  &__logo {
-    display: inline-block;
-    margin-bottom: 19px;
+  // Навигация
+  &__nav--desktop {
+    display: flex; // По умолчанию показываем на десктопе
 
-    @include tablet {
-      margin-bottom: 0;
+    @include mobile {
+      display: none; // Скрываем на мобильных
     }
   }
 
-  &__nav {
-    @include tablet {
-      width: 100%;
+  &__nav--mobile {
+    display: none; // Скрыт на десктопе
+
+    @include mobile {
+      display: block; // Показываем на мобильных
     }
   }
 
+  // Список футера
   &__list {
     display: flex;
     gap: 93px;
@@ -126,25 +108,40 @@
     }
 
     @include mobile {
-      gap: 40px 60px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    @include small-mobile {
-      text-align: center;
+      flex-direction: column;
     }
   }
 
   &__item {
+    flex: 1;
+
     &-title {
       margin-bottom: 24px;
       font-weight: 700;
-      line-height: 150%;
+      cursor: pointer;
+
+      @include mobile {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        cursor: pointer; // Интерактивность на мобильных
+      }
     }
 
-    @include mobile {
-      min-width: 143px;
+    .footer__sublist {
+      display: block; // На десктопе списки видимы
+
+      @include mobile {
+        display: none; // Прячем списки на мобильных
+      }
+    }
+
+    &--active .footer__sublist {
+      display: flex; // Открытие аккордеона на мобильных
+      align-items: center;
+      justify-content: center;  
+      text-align: center;
     }
   }
 
@@ -158,6 +155,7 @@
       font-weight: 400;
       line-height: 150%;
       color: var(--neutral-color-150);
+      text-decoration: none;
 
       &::after {
         content: '';
@@ -183,6 +181,7 @@
     }
   }
 
+  // Нижняя часть футера
   &__bottom {
     @include flex-all-between;
     gap: 20px 40px;
