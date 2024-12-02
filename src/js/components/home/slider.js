@@ -18,17 +18,17 @@ export const useInsightSlider = () => {
 
 export const usePartnersSlider = () => {
   new Swiper('.partners__slider', {
-    modules: [Autoplay],  // Используем только Autoplay для этого слайдера
-    slidesPerView: 4,
-    spaceBetween: 80,
-    centeredSlides: true,
-    loop: true,
-    autoplay: {
-      delay: 0,
-    },
-    speed: 2500,
-    reverseDirection: true,
-    allowTouchMove: false,
+      modules: [Autoplay],
+      slidesPerView: 4,
+      spaceBetween: 80,
+      centeredSlides: true,
+      loop: true,
+      autoplay: {
+          delay: 0,
+      },
+      speed: 2500,
+      reverseDirection: true,
+      allowTouchMove: false,
   });
 };
 

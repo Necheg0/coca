@@ -6,11 +6,9 @@
   }
 
   &__container {
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      @include flex-all-between;
       gap: 30px;
-      max-width: 1110px;
+      max-width: 1205px;
 
       @include small-tablet {
           flex-direction: column;
@@ -64,12 +62,13 @@
 
   &__slider {
       width: 0;
+      display: block;
       display: none;
       visibility: hidden;
 
       @include mobile {
           width: 500px;
-          height: 100px;
+          height: 110px;
           padding: 20px;
           display: block;
           visibility: visible;
@@ -95,4 +94,4 @@
           }
       }
   }
-} 
+}
