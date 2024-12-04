@@ -1,0 +1,135 @@
+.about {
+  margin-top: 105px;
+  margin-bottom: 135px;
+
+  &__hero {
+    @include mini-desktop {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  &__title {
+    color: var(--neutral-color-100);
+    max-width: 960px;
+    margin-bottom: 70px;
+
+    @include mini-desktop {
+      text-align: center;
+      br {
+        display: none;
+      }
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__subtitle {
+    color: var(--neutral-color-100);
+    max-width: 840px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 135px;
+
+    &::before {
+      transform: translateY(-85px);
+    }
+
+    @include mini-desktop {
+      text-align: center;
+      max-width: 760px;
+      br {
+        display: none;
+      }
+    }
+  }
+
+  &__top-img {
+    svg {
+      display: inline-block;
+      width: 162px;
+      height: 162px;
+      color: var(--neutral-color-100); /* Используем color */
+      fill: currentColor; /* Используем currentColor для наследования */
+
+      @include mini-desktop {
+        display: none;
+      }
+    }
+  }
+
+&__slider{
+  margin-bottom: 165px;
+}
+
+  &__article {
+    max-width: 502px;
+  }
+  &__article-title {
+    margin-top: 80px;
+    margin-bottom: 50px;
+  }
+  &__slider-button {
+    display: flex;
+    width: 175px;
+    padding: 16px 32px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    border-radius: 100px;
+    background: var(--neutral-color-100);
+    color: var(--neutral-color-10);
+  }
+  &__btns {
+    margin-bottom: 50px;
+    @include flex-align-center;
+    gap: 16px;
+    justify-content: flex-end;
+
+    @include mini-desktop {
+      transform: translateY(0px);
+    }
+  }
+
+  &__btn {
+    @include flex-all-center;
+    border: 1px solid var(--neutral-color-40);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    transition:
+      background-color var(--transition),
+      border-color var(--transition);
+
+    @include small-mobile {
+      width: 40px;
+      height: 40px;
+    }
+
+    & svg path {
+      transition: fill var(--transition);
+    }
+
+    &:hover {
+      border-color: var(--neutral-color-100);
+      background-color: var(--neutral-color-100);
+
+      & svg path {
+        fill: var(--neutral-color-10);
+      }
+    }
+
+    &--next {
+      transform: rotate(-180deg);
+    }
+  }
+}
+
+.swiper-wrapper{
+  margin-right: -35px;
+}
